@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :topics
-  root 'topics#index'
+  root 'groups#index'
   get 'welcome',to:'topics#welcome'
   resources :groups do
     resources :posts
