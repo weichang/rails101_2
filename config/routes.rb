@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root 'groups#index'
   get 'welcome',to:'topics#welcome'
   resources :groups do
+    member do
+      post :join
+      post :quit
+    end
     resources :posts
   end
   # The priority is based upon order of creation: first created -> highest priority.
